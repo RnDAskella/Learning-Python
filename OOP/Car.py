@@ -12,5 +12,5 @@ print(getattr(Car, "engine",
 Если такого аттрибута нет, то возвращает 100."""
 
 # Car.color = "Red"  # устанавливаем новый аттрибут???
-a1 = Car()
-print(a1.color)
+car_1 = Car()
+# print(a1.color)
