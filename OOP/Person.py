@@ -1,3 +1,9 @@
+"""
+Создание геттеров, сеттеров, делитеров как свойства (декораторы).
+Private and protected attributes.
+"""
+
+
 class Person:
     def __init__(self, name: str = ' ',
                  age: int = 0,
@@ -6,21 +12,29 @@ class Person:
         self.__age = age
         self.sex = sex
 
-    def get_age(self):
+    @property
+    def age(self):
         return self.__age
 
-    def set_age(self, custom_age):
+    @age.setter
+    def age(self, custom_age):
         if not isinstance(custom_age, int):  # Можем проходить по кортежу!!!
             raise ValueError("Custom_age must be int or float")
         self.__age = custom_age
 
-    def delete_age(self):
+    @age.deleter
+    def age(self):
         del self.__age
         print("We deleted this attributes")
 
-    person_age = property(fget=get_age,
-                          fset=set_age,
-                          fdel=delete_age)
+    # person_age_after_change = property(person_age_after_change)
+    # person_age_after_change = person_age_after_change.getter(get_age)
+    # person_age_after_change = person_age_after_change.setter(set_age)
+    # person_age_after_change = person_age_after_change.deleter(delete_age)
+
+    # person_age = property(fget=get_age,
+    #                       fset=set_age,
+    #                       fdel=delete_age)
 
 
 def print_total_attributes(var_name: str, var_age, var_sex: str):
@@ -33,3 +47,8 @@ def print_total_attributes(var_name: str, var_age, var_sex: str):
 
 
 print_total_attributes(var_name='Alex', var_age=33, var_sex='M')
+h = Person()
+h.age = 100
+print(h.age)
+del h.age
+# print(h.age)
