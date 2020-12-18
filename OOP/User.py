@@ -30,7 +30,7 @@ class User:
 
     @staticmethod
     def __is_user_password_on_contain_digit(
-            password):  # если таким образом защитить, то не будет видно вызова у эземпляра
+            password):  # если таким образом защитить, то не будет видно вызова у экземпляра
         for digit in digits:
             if digit in password:
                 return True
