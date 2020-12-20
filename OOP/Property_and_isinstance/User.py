@@ -8,6 +8,7 @@ from string import digits
 
 
 class User:
+
     def __init__(self, login, password_user):
         self.login = login
         self.password = password_user  # Обрати внимание, что теперь атрибут self.password - свойство
