@@ -54,26 +54,39 @@ class BankAccount:
     def __rtruediv__(self, other):
         return self.balance / other
 
+    # def __eq__(self, other):
+    #     return self.balance == other.balance
+
+    def __hash__(self):
+        return 100
+
 
 account_1 = BankAccount("Alex", 100)
+account_10 = BankAccount("Alex", 100)
 account_2 = BankAccount("Kate", 500)
 
-print(f"Результатом работы __add__ будет: {account_1 + 100}")
-print(f"Результатом работы __add__ будет: {101 + account_1}")
-print(f"Результатом работы __add__ будет: {account_1 + account_2}")
-print(f"Результатом работы __add__ будет: {account_2 + account_1}")
-print(40 * "#")
-print(f"Результатом работы __sub__ будет: {account_1 - 100}")
-print(f"Результатом работы __sub__ будет: {101 - account_1}")
-print(f"Результатом работы __sub__ будет: {account_1 - account_2}")
-print(f"Результатом работы __sub__ будет: {account_2 - account_1}")
-print(40 * "#")
-print(f"Результатом работы __mul__ будет: {account_1 * 100}")
-print(f"Результатом работы __mul__ будет: {100 * account_1}")
-print(f"Результатом работы __mul__ будет: {account_1 * account_2}")
-print(f"Результатом работы __mul__ будет: {account_2 * account_1}")
-print(40 * "#")
-print(f"Результатом работы __truediv__ будет: {account_1 / 100}")
-print(f"Результатом работы __truediv__ будет: {100 / account_1}")
-print(f"Результатом работы __truediv__ будет: {account_1 / account_2}")
-print(f"Результатом работы __truediv__ будет: {account_2 / account_1}")
+# print(f"Результатом работы __add__ будет: {account_1 + 100}")
+# print(f"Результатом работы __add__ будет: {101 + account_1}")
+# print(f"Результатом работы __add__ будет: {account_1 + account_2}")
+# print(f"Результатом работы __add__ будет: {account_2 + account_1}")
+# print(40 * "#")
+# print(f"Результатом работы __sub__ будет: {account_1 - 100}")
+# print(f"Результатом работы __sub__ будет: {101 - account_1}")
+# print(f"Результатом работы __sub__ будет: {account_1 - account_2}")
+# print(f"Результатом работы __sub__ будет: {account_2 - account_1}")
+# print(40 * "#")
+# print(f"Результатом работы __mul__ будет: {account_1 * 100}")
+# print(f"Результатом работы __mul__ будет: {100 * account_1}")
+# print(f"Результатом работы __mul__ будет: {account_1 * account_2}")
+# print(f"Результатом работы __mul__ будет: {account_2 * account_1}")
+# print(40 * "#")
+# print(f"Результатом работы __truediv__ будет: {account_1 / 100}")
+# print(f"Результатом работы __truediv__ будет: {100 / account_1}")
+# print(f"Результатом работы __truediv__ будет: {account_1 / account_2}")
+# print(f"Результатом работы __truediv__ будет: {account_2 / account_1}")
+
+print(hash(account_1))
+print(hash(account_10))
+print(id(account_1))
+print(id(account_10))
+print(account_1 == account_10)

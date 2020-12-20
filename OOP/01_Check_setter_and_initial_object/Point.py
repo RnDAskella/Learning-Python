@@ -24,3 +24,5 @@ point_1 = Point(2)
 point_2 = Point(2, 4)
 a = point_1.evaluate_distance_between_point(point_2)
 print(a)
+
+print(point_2 is point_1)

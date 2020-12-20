@@ -3,6 +3,8 @@
 Проверка объекта по соответствию типу isinstance().
 
 """
+
+
 class Person:
     def __init__(self, name: str = ' ',
                  age: int = 0,
